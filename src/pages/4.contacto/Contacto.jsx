@@ -128,8 +128,9 @@ const ContactForm = () => {
 
 // Render the form
   return (
+    <div className="bg-white">
     <form id='contact-form' onSubmit={submitToAPI}>
-      <div className="bg-white space-y-12">
+      <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
         <div className="mb-4"></div>
           <h2 className="text-base/7 font-semibold text-gray-900">Contacto</h2>
@@ -373,6 +374,7 @@ const ContactForm = () => {
       </div> */}
       <div className="mb-2"></div>
     </form>
+    </div>
   )
 }
 
