@@ -25,11 +25,9 @@ const Home = () => {
               que están disponibles para desarrollar aplicaciones que solucionen nuestras necesidades.</p>
               <p className="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC (Near Field Communication, lo que traducido al español sería Comunicación por Campo Cercano) es una tecnologia de comunicaciones que permite 
               una conexión para el intercambio de datos con otros dispositivos en distancias inferiores a 10 centímetros.</p>
-              <p className="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC intercambia inhtmlFor
-              mación con alta seguridad y se aplica en: las billeteras digitales, control de acceso, transporte publico; 
+              <p className="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC intercambia información con alta seguridad y se aplica en: las billeteras digitales, control de acceso, transporte publico; 
               Sincronización con otros dispositivos: audífonos, parlantes; Compartir datos: fotos, archivos, enlaces a paginas web, etc.</p>
-              <p className="mt-1 p-4 text-start text-sm/6 text-gray-800">- Las etiquetas (o tags) para NFC son seguras, de bajo costo, tienen un numero de identificación único (UID) y permiten almacenar inhtmlFor
-              mación.</p>
+              <p className="mt-1 p-4 text-start text-sm/6 text-gray-800">- Las etiquetas (o tags) para NFC son seguras, de bajo costo, son irrepetibles por tener un numero de identificación único (UID) y permiten almacenar información.</p>
             </div>
           </div>
         </div>
