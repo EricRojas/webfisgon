@@ -345,7 +345,7 @@ const ContactForm = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm/6 font-semibold text-gray-700">
+        <button type="button" className="text-sm/6 font-semibold text-gray-700 dark:text-gray-300">
           Cancelar
         </button>
         <button
@@ -357,7 +357,7 @@ const ContactForm = () => {
       </div>
       <div className="mb-4"></div>
       <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">Contacto</h2>
+          <h2 className="text-base/7 font-semibold text-gray-900 dark:text-gray-200">Contacto</h2>
           <p className="mt-1 text-sm/6 text-gray-600">
           Tels. +57: (601)3590025, 310-3011575, Bogota D. C. Colombia. v.1.2          </p>
       </div>
