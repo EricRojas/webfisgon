@@ -1,128 +1,158 @@
-import ScanTag_1 from "../../assets/images/ScanTag_1.jpg"
-import ScanTag_2 from "../../assets/images/ScanTag_2.jpg"
-import ScanTag_3 from "../../assets/images/ScanTag_3.jpg"
-import FRScreen_1 from "../../assets/images/FRScreen_1.jpg"
-import FRScreen_2 from "../../assets/images/FRScreen_2.jpg"
-import FRScreen_3 from "../../assets/images/FRScreen_3.jpg"
-import FRScreen_4 from "../../assets/images/FRScreen_4.jpg"
-import FRScreen_5 from "../../assets/images/FRScreen_5.jpg"
-import FRScreen_6 from "../../assets/images/FRScreen_6.jpg"
-import FRScreen_7 from "../../assets/images/FRScreen_7.jpg"
-import FRScreen_8 from "../../assets/images/FRScreen_8.jpg"
-import FisgonPCScreen_1b from "../../assets/images/FisgonPCScreen_1b.jpg"
-import FisgonPCScreen_2b from "../../assets/images/FisgonPCScreen_2c.jpg"
-import FisgonPCScreen_3b from "../../assets/images/FisgonPCScreen_3b.jpg"
-import FisgonPCScreen_4b from "../../assets/images/FisgonPCScreen_4c.jpg"
 
-const features = [
-  { name: 'Sencillo de instalar', description: 'Descarga la aplicación y la instala en equipos Android con NFC, convirtiéndolo en un lector' },
-  { name: 'Puntos o etiquetas', description: 'Son únicos, no se pueden repetir, gracias a su numero único de identificación UID y guardan información del numero de lectura y la fecha y hora en que se realizó' },
-  { name: 'Usuarios habilitados', description: 'El supervisor define los usuarios. Al iniciar el turno el usuario debe iniciar sesión para poder hacer las lecturas en las rondas' },
-  { name: 'Detección y lectura', description: 'Cuando el lector detecta el punto, intercambia información guardando un registro del numero de la lectura, el nombre del punto, su UID, la fecha y hora y el usuario' },
-  { name: 'Reportes de lecturas', description: 'Cuando se requiera un reporte de las lecturas realizadas, se genera y se envía al supervisor por correo o por WhatsApp' },
-  { name: 'Aplicación para computador del supervisor', description: 'FisgonPC tiene dos funciones: Configuración y estudio de los puntos (o etiquetas) y una base de datos para el manejo de los reportes recibidos' },
-  { name: 'Base de Datos FisgonPC', description: 'Nos permite en el computador del supervisor analizar y verificar el cumplimiento de las rondas, mediante la incorporación de los reportes de las lecturas' },
-  { name: 'Configuración y manejo de Puntos', description: 'Podemos inicializar los puntos, asignándoles la ubicación antes de ser instalados. También leer las fechas y horas en que se realizaron las lecturas, borrar la información y reasignarlos' },
-]
+import fisgonLogo from '../../assets/FisgonLogo.svg'
+import fisgon_login from "../../assets/images/fisgon_login.jpg"
+import fisgon_home from "../../assets/images/fisgon_home.jpg"
+import fisgon_scan from "../../assets/images/fisgon_scan.jpg"
+import fisgon_lectura from "../../assets/images/fisgon_lectura.jpg"
+import fisgon_lecturas from "../../assets/images/fisgon_lecturas.jpg"
+import fisgon_csv1 from "../../assets/images/fisgon_csv1.jpg"
+import fisgon_csv2 from "../../assets/images/fisgon_csv2.jpg"
+import fisgon_supervisor from "../../assets/images/fisgon_supervisor.jpg"
+import fisgon_borrarLects from "../../assets/images/fisgon_borrarLects.jpg"
+import fisgon_cambiarUbic from "../../assets/images/fisgon_cambiarUbic.jpg"
+import fisgon_lecturasTag from "../../assets/images/fisgon_lecturasTag.jpg"
+import fisgon_crearUser2 from "../../assets/images/fisgon_crearUser2.jpg"
+import fisgon_deleteUser from "../../assets/images/fisgon_deleteUser.jpg"
+import fisgonPC_db from "../../assets/images/fisgonPC_db.jpg"
+import fisgonPC_formatear from "../../assets/images/fisgonPC_formatear.jpg"
+import fisgonPC_etiquetas from "../../assets/images/fisgonPC_etiquetas.jpg"
+import fisgonPC_inicial from "../../assets/images/fisgonPC_inicial.jpg"
+import fisgon_iniSupervisor from "../../assets/images/fisgon_iniSupervisor.jpg"
+import arrow from "../../assets/images/arrow.png"
+import star from "../../assets/images/star.png"
+import oki from "../../assets/images/oki.png"
 
 export default function FisgoRoute() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Fisgon-Route</h2>
-          <p className="mt-4 text-gray-500">
-            Esta aplicación utiliza el equipo móvil como lector y las etiquetas NFC como puntos en el Control de Rondas, 
-            con seguridad, confiabilidad y eficiencia, generando registros de las lecturas en una base de datos y dejando una huella digital 
-            en las etiquetas que corresponde con el momento de la lectura para una posible verificación posterior.
-          </p>
-
-          <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 sm:gap-y-16 lg:gap-x-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">{feature.name}</dt>
-                <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
+    <div className="select-none min-h-screen flex flex-col justify-center">
+      <div className="mb-2"></div>
+      <p className="text-2xl pt-4 font-bold text-gray-900">Fisgon-Route</p>
+      <div className="p-4 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+        <div className="sm:col-span-4">
+          <label htmlFor="username" className="text-start block text-sm/6 font-medium text-gray-900">Características</label>
+          <div className="mt-1">
+            <div className="flex flex-col items-start rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+              {/* Imágenes del kit en la parte inferior */}
+              <label htmlFor="username" className="p-2 text-start block text-sm/4 font-medium text-gray-800">
+                Procedimiento seguido por el Vigilante o Usuario en el lector usando FisgonRoute:
+              </label>
+              <div className="flex flex-wrap justify-center items-center gap-6 mt-4 p-2">
+                {/* Cada paso */}
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_login} alt="fisgon_login" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Inicio sesión</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_home} alt="fisgon home" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Menú usuario</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_scan} alt="fisgon scan" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Lectura punto</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_lectura} alt="fisgon lectura" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Datos lectura</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_lecturas} alt="fisgon lecturas" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Base de datose</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_csv1} alt="fisgon csv1" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Crear Reporte</p>
+                  <img src={arrow} alt="arrow" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_csv2} alt="fisgon csv2" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Envio Reporte</p>
+                  <img src={star} alt="star" className="w-5 mx-auto" />
+                </div>
               </div>
-            ))}
-          </dl>
-        </div>
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          <img
-            alt="Scan Tag 1"
-            src={ScanTag_1}
-            className="rounded-lg bg-gray-100"
-          />
-          <img
-            alt="Scan Tag 2"
-            src={ScanTag_2}
-            className="rounded-lg bg-gray-100"
-          />
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img
-              alt="FR Screen 1"
-              src={FRScreen_1}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 2"
-              src={FRScreen_2}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 5"
-              src={FRScreen_5}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 6"
-              src={FRScreen_6}
-              className="rounded-lg bg-gray-100"
-            />
+              <br></br>
+              <label htmlFor="username" className="p-2 text-start block text-sm/4 font-medium text-gray-800">
+                Funciones que puede realizar el Supervisor en el lector usando FisgonRoute:
+              </label>
+              <div className="flex flex-wrap justify-center items-center gap-6 mt-4 p-2">
+                {/* Cada paso */}
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_iniSupervisor} alt="fisgon_iniSupervisor" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Inicio Supervisor</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_supervisor} alt="fisgon_supervisor" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Menú Supervisor</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_crearUser2} alt="fisgon_crearUser2" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Crear Usuario</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_deleteUser} alt="fisgon_deleteUser" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Borrar Usuario</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_borrarLects} alt="fisgon_borrarLects" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Borrar Lecturas</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_lecturasTag} alt="fisgon_lecturasTag" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Leer Puntos</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-24 sm:w-32 mb-2">
+                  <img src={fisgon_cambiarUbic} alt="fisgon_cambiarUbic" className="w-full h-auto rounded shadow" />
+                  <p className="mt-1 text-start text-sm/6 text-gray-800">Editar Ubicación</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+              </div>
+              <br></br>
+              <label htmlFor="username" className="p-2 text-start block text-sm/4 font-medium text-gray-800">
+                Funciones que puede realizar el Supervisor en el Computador usando FisgonPC:
+              </label>
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 mt-4 pr-2">
+                <div className="flex flex-col items-center w-full mb-2">
+                  <img src={fisgonPC_inicial} alt="fisgonPC_inicial" className="w-full h-auto" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Base Datos</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-full mb-2">
+                  <img src={fisgonPC_db} alt="fisgonPC_db" className="w-full h-auto" />
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Revisar Etiquetas</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-full mb-2">
+                  <br></br>
+                  <img src={fisgonPC_etiquetas} alt="fisgonPC_etiquetas" className="w-full h-auto" />
+                  <br></br>
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Editar Etiquetas</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+                <div className="flex flex-col items-center w-full mb-2">
+                  <br></br>
+                  <img src={fisgonPC_formatear} alt="fisgonPC_formatear" className="w-full h-auto" />
+                  <br></br>
+                  <p className="mt-1 text-center text-xs sm:text-sm text-gray-800">Formatear Etiquetas</p>
+                  <img src={oki} alt="oki" className="w-5 mx-auto" />
+                </div>
+              </div>
+              <br></br>
+            </div>
           </div>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img
-              alt="FR Screen 3"
-              src={FRScreen_3}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 4"
-              src={FRScreen_4}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 7"
-              src={FRScreen_7}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FR Screen 8"
-              src={FRScreen_8}
-              className="rounded-lg bg-gray-100"
-            />
-          </div>
-            <img
-              alt="FisgonPC Screen 1"
-              src={FisgonPCScreen_1b}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FisgonPC Screen 3"
-              src={FisgonPCScreen_3b}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FisgonPC Screen 2"
-              src={FisgonPCScreen_2b}
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              alt="FisgonPC Screen 4"
-              src={FisgonPCScreen_4b}
-              className="rounded-lg bg-gray-100"
-            />
         </div>
-        
+      </div>
+      <div className="logo-container flex justify-center items-center">
+        <img src={fisgonLogo} className="logo fisgon" alt="Fisgon logo" />
       </div>
     </div>
   )

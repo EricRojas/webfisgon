@@ -1,5 +1,6 @@
 //import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { useState } from 'react'
+import packageJson from '../../../package.json' // Import package.json to get the version number
 
 const ContactForm = () => {
   // State to manage form data
@@ -59,32 +60,7 @@ const ContactForm = () => {
         const Invoke_URL = "https://a75ue5vhtj.execute-api.us-east-1.amazonaws.com/InitialStage";
         const API_URL = "https://a75ue5vhtj.execute-api.us-east-1.amazonaws.com/InitialStage/contactUs";
         console.log('Form Data Submitted:', formData);
-        //setSubmittedData(formData); // Save the submitted data to state
-        //alert('Formulario enviado y esperando respuesta:\n' + JSON.stringify(formData, null, 2));
-        /*
-        // Custom alert with duration of 3 second
-        const aviso = window.alert;
-        setTimeout(() => {
-          if (window.confirm) window.confirm = aviso; // restore if needed
-        }, 1000);
-        // Custom aviso con duración de 1 segundo
-        const avisoDiv = document.createElement('div');
-        avisoDiv.textContent = 'Formulario enviado y esperando respuesta:\n' + JSON.stringify(formData, null, 2);
-        avisoDiv.style.position = 'fixed';
-        avisoDiv.style.top = '20px';
-        avisoDiv.style.left = '50%';
-        avisoDiv.style.transform = 'translateX(-50%)';
-        avisoDiv.style.background = '#4f46e5';
-        avisoDiv.style.color = '#fff';
-        avisoDiv.style.padding = '16px 24px';
-        avisoDiv.style.borderRadius = '8px';
-        avisoDiv.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
-        avisoDiv.style.zIndex = 9999;
-        document.body.appendChild(avisoDiv);
-        setTimeout(() => {
-          document.body.removeChild(avisoDiv);
-        }, 3000);
-        */
+
         try {
             const response = await fetch(API_URL, {
                 //mode: 'no-cors',
@@ -128,7 +104,8 @@ const ContactForm = () => {
 
 // Render the form
   return (
-    <div className="bg-white">
+    <div>
+    <div className="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-36">
     <form id='contact-form' onSubmit={submitToAPI}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
@@ -157,7 +134,7 @@ const ContactForm = () => {
                     value={formData.empresa}
                     onChange={handleChange}
                     maxLength={50} // Limit to 50 characters
-                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-300 focus:outline-none sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -178,7 +155,7 @@ const ContactForm = () => {
                   value={formData.nombre}
                   onChange={handleChange}
                   maxLength={20} // Limit to 20 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -197,7 +174,7 @@ const ContactForm = () => {
                   value={formData.apellido}
                   onChange={handleChange}
                   maxLength={20} // Limit to 20 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -217,7 +194,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   maxLength={50} // Limit to 50 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -237,7 +214,7 @@ const ContactForm = () => {
                   value={formData.telefono}
                   onChange={handleChange}
                   maxLength={15} // Limit to 15 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -257,7 +234,7 @@ const ContactForm = () => {
                   value={formData.direccion}
                   onChange={handleChange}
                   maxLength={50} // Limit to 50 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -277,7 +254,7 @@ const ContactForm = () => {
                   value={formData.ciudad}
                   onChange={handleChange}
                   maxLength={20} // Limit to 20 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -297,7 +274,7 @@ const ContactForm = () => {
                   value={formData.departamento}
                   onChange={handleChange}
                   maxLength={20} // Limit to 20 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -336,7 +313,7 @@ const ContactForm = () => {
                   value={formData.mensaje}
                   onChange={handleChange}
                   maxLength={500} // Limit to 500 characters
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
               <p className="mt-3 text-sm/6 text-gray-600">Déjenos saber el propósito de su contacto a través de este mensaje</p>
@@ -344,25 +321,32 @@ const ContactForm = () => {
       </div>
 
       {/* Buttons */}
-      <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm/6 font-semibold text-gray-700 dark:text-gray-300">
-          Cancelar
-        </button>
-        <button
-          type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-200 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Enviar
-        </button>
-      </div>
-      <div className="mb-4"></div>
-      <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900 dark:text-gray-200">Contacto</h2>
-          <p className="mt-1 text-sm/6 text-gray-600">
-          Tels. +57: (601)3590025, 310-3011575, Bogota D. C. Colombia. v.1.2          </p>
-      </div>
-      
-      {/* Display submitted data in Contacto form */}
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <button type="button" className="text-sm/6 font-semibold text-gray-700 dark:text-gray-300">
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-200 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Enviar
+          </button>
+        </div>
+        <div className="mb-4"></div>
+        <div className="border-b border-gray-900/10 pb-12">
+            <h2 className="text-base/7 font-semibold text-gray-900 dark:text-gray-200">Contacto</h2>
+            <p className="mt-1 text-sm/6 text-gray-900 flex items-center gap-2 justify-center text-center">
+          {/* Email icon SVG */}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12l-4-4-4 4m8 0v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6m16-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v4" />
+          </svg>
+          Email: fisgonroute@ericel.com, Tels. +57: (601)3590025, 310-3011575, Bogota D. C. Colombia.
+            </p>
+            <p className="text-xs text-gray-500">Versión: {packageJson.version}</p>
+            {/*<p className="mt-1 text-sm/6 text-gray-600 flex items-center gap-2 justify-center text-center">Versión: {packageJson.version}</p>*/}
+        </div>
+        
+        {/* Display submitted data in Contacto form */}
       {/*}
       <div>
         {submittedData && (
@@ -374,6 +358,7 @@ const ContactForm = () => {
       </div> */}
       <div className="mb-2"></div>
     </form>
+    </div>
     </div>
   )
 }

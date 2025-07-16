@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
-import ScanTag_1 from "../../assets/images/ScanTag_1.jpg"
+import fisgonLogo from '../../assets/FisgonLogo.svg'
 import kitFisgon3 from "../../assets/images/kitFisgon3.jpg"
 import kitFisgon1 from "../../assets/images/kitFisgon1.jpg"
 import kitFisgon2 from "../../assets/images/kitFisgon2.jpg"
-import FisgonRouteX3 from "../../assets/images/FisgonRouteX3_1.jpg"
-import FisgonPCScreen1 from "../../assets/images/FisgonPCScreen_1b.jpg"
+import FisgonRouteX3 from "../../assets/images/fisgon_screenx3.jpg"
+import fisgonPC_inicial1 from "../../assets/images/fisgonPC_inicial1.jpg"
 
 const product = {
   name: 'Kit FisgonRoute',
@@ -20,7 +20,7 @@ const product = {
       alt: 'Lector NFC conexion USB.',
     },
     {
-      src: FisgonPCScreen1,
+      src: fisgonPC_inicial1,
       alt: 'Fisgon PC App.',
     },
     {
@@ -38,8 +38,8 @@ const product = {
   highlights: [
     'Aplicación para el equipo móvil FisgonRoute',
     'Aplicación para el computador de escritorio o portátil FisgonPC',
-    'Seis (6) puntos (etiquetas o tags) tipo llavero NFC',
-    'Un punto tipo carnet PVC',
+    'Seis (6) puntos (etiquetas o tags) NFC tipo llavero',
+    'Un punto NFC tipo carnet PVC',
     'Un lector NFC con entrada USB',
   ],
   details:
@@ -52,7 +52,7 @@ const Soluciones = () => {
       <div className="pt-6">
       <p className="text-2xl font-semibold text-gray-900">Paquete básico Fisgon-Route</p>
         {/* Image gallery */}
-          <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+          <div className="mx-auto mt-10 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div className="grid grid-cols-1 gap-y-4 lg:hidden">
               <img
                 alt={product.images[0].alt}
@@ -94,9 +94,9 @@ const Soluciones = () => {
             />
           </div>
               </div>
-              <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl lg:px-8">
+              <div className="mx-auto max-w-2xl px-4 pt-6 pb-8 sm:px-6 lg:max-w-7xl lg:px-8">
           {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        <div className="mx-auto max-w-2xl px-4 pt-8 pb-8 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-2">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h2 className="text-2xl font-bold tracking-tight text-start text-gray-900 sm:text-3xl">{product.name}</h2>
           </div>
@@ -111,7 +111,7 @@ const Soluciones = () => {
             <p className="text-3xl tracking-tight text-gray-900">{product.name1}</p>
           </div>
 
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
+          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-8">
             {/* Description and details */}
             <div>
               <div className="space-y-6">
@@ -142,6 +142,9 @@ const Soluciones = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="logo-container flex justify-center items-center">
+        <img src={fisgonLogo} className="logo fisgon" alt="Fisgon logo" />
       </div>
     </div>
   )

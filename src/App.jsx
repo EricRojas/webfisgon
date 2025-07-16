@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Add this import
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'; // Add this import
 import { useState } from 'react'
 import fisgonLogo from './assets/FisgonLogo.svg'
-import Navbar from './components/header/Navbar'
+import Header from './components/header/Header'
 import './App.css'
 import Home from './pages/1.home/Home'
 import Caracteristicas from './pages/2.caracteristicas/Caracteristicas';
@@ -12,10 +12,9 @@ import Footer from './components/footer/Footer';
 function App() {
 
   return (
-    <div>
       <Router>
-
-        <Navbar />
+        <Header />
+        <main className="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -25,10 +24,9 @@ function App() {
           {/* Catch-all route to redirect to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
+        </main>
         <Footer />
       </Router>
-    </div>
-
   )
 }
 
